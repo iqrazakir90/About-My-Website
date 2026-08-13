@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iqra Zakir | Web Developer</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaff;
+            color: #27203b;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 100%;
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 7%;
+            background-color: #fffaff;
+            box-shadow: 0 2px 15px rgba(110, 80, 150, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h2 {
+            color: #6e4b8a;
+            font-size: 27px;
+        }
+
+        .logo span {
+            color: #c777ac;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #302445;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a36ac0;
+        }
+
+        .hire-btn {
+            text-decoration: none;
+            background-color: #704d88;
+            color: white;
+            padding: 11px 25px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .hire-btn:hover {
+            background-color: #b67ab7;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 8%;
+            background: linear-gradient(135deg, #fff7fc, #eee2f7);
+        }
+
+        .hero-content {
+            width: 55%;
+        }
+
+        .small-title {
+            color: #a16ab0;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            color: #342448;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: #b16da1;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #645d6c;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .main-btn,
+        .outline-btn {
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .main-btn {
+            background-color: #75508e;
+            color: white;
+        }
+
+        .main-btn:hover {
+            background-color: #a876bd;
+            transform: translateY(-3px);
+        }
+
+        .outline-btn {
+            border: 2px solid #75508e;
+            color: #75508e;
+        }
+
+        .outline-btn:hover {
+            background-color: #75508e;
+            color: white;
+        }
+
+        .hero-image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .code-circle {
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a4de, #f2bfd3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 50px rgba(100, 70, 130, 0.25);
+        }
+
+        .code-circle i {
+            font-size: 90px;
+            color: white;
+        }
+
+        .code-circle h3 {
+            margin-top: 20px;
+            color: white;
+            font-size: 25px;
+        }
+
+        .code-circle p {
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* COMMON */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading p {
+            color: #9f68ad;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-size: 40px;
+            margin-top: 8px;
+            color: #342448;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .about-left {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-box {
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #e4c9ef, #f8d2df);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-box i {
+            font-size: 110px;
+            color: #704b8c;
+        }
+
+        .about-right {
+            width: 55%;
+        }
+
+        .about-right h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-right p {
+            line-height: 1.8;
+            color: #696171;
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            background-color: #f8f2fb;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 40px 25px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(108, 77, 130, 0.08);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card i {
+            font-size: 55px;
+            color: #855da2;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* PROJECTS */
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(85, 60, 105, 0.12);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-icon {
+            height: 180px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #ead9f2, #f5cadc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .project-icon i {
+            font-size: 80px;
+            color: #704d88;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #747074;
+            line-height: 1.7;
+        }
+
+        .project-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .project-buttons a {
+            text-decoration: none;
+            background-color: #76518e;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .project-buttons a:hover {
+            background-color: #b378b7;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background-color: #f8f2fb;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
+        .contact-info {
+            width: 45%;
+        }
+
+        .contact-info h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            line-height: 1.8;
+            color: #716b75;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #76518e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background-color: #ac75b5;
+        }
+
+        .contact-form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #dbcde4;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #966ab2;
+        }
+
+        .contact-form button {
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background-color: #76518e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #aa75b4;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #30243c;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer h3 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        footer p {
+            color: #d6c8df;
+            margin-top: 5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content,
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                margin-top: 60px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-left,
+            .about-right {
+                width: 100%;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-info,
+            .contact-form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .navbar {
+                padding: 10px 5%;
+            }
+
+            .logo h2 {
+                font-size: 21px;
+            }
+
+            .hire-btn {
+                padding: 9px 16px;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 25px;
+            }
+
+            .code-circle {
+                width: 260px;
+                height: 260px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <h2>Iqra <span>Zakir</span></h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="hire-btn">Hire Me</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">Hello, I'm</p>
+
+            <h1>Iqra Zakir</h1>
+
+            <h2>Web Developer</h2>
+
+            <p>
+                I create modern, responsive and user-friendly websites.
+                I love building frontend projects and improving my
+                development skills through practical work.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="main-btn">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="outline-btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="code-circle">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h3>Web Developer</h3>
+
+                <p>HTML • CSS • JavaScript</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-heading">
+            <p>Get To Know Me</p>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-left">
+
+                <div class="about-box">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+            </div>
+
+            <div class="about-right">
+
+                <h3>I'm a passionate Web Developer</h3>
+
+                <p>
+                    I enjoy creating clean, attractive and responsive
+                    websites. I regularly build practice projects to
+                    improve my frontend development skills.
+                </p>
+
+                <p>
+                    My portfolio contains projects such as Amazon Clone,
+                    Netflix Clone, Calculator, Login Pages and other
+                    frontend designs.
+                </p>
+
+                <a href="#projects" class="main-btn">
+                    Explore My Work
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+
+        <div class="section-heading">
+            <p>What I Know</p>
+            <h2>My Skills</h2>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Website structure and semantic markup.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Responsive layouts and modern styling.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Interactive and dynamic websites.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-bootstrap"></i>
+                <h3>Bootstrap</h3>
+                <p>Fast responsive website components.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="section-heading">
+            <p>My Recent Work</p>
+            <h2>Projects</h2>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-brands fa-amazon"></i>
+                </div>
+
+                <h3>Amazon Clone</h3>
+
+                <p>
+                    Amazon inspired ecommerce website created
+                    using HTML and CSS.
+                </p>
+
+                <div class="project-buttons">
+                    <a href="" target="_blank">
+                        Live Demo
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+
+                <h3>Netflix Clone</h3>
+
+                <p>
+                    Netflix inspired responsive homepage created
+                    for frontend development practice.
+                </p>
+
+                <div class="project-buttons">
+                    <a href="#" target="_blank">
+                        Live Demo
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <h3>Calculator</h3>
+
+                <p>
+                    Functional calculator built with HTML,
+                    CSS and JavaScript.
+                </p>
+
+                <div class="project-buttons">
+                    <a href="#" target="_blank">
+                        Live Demo
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+
+                <h3>Animated Login Page</h3>
+
+                <p>
+                    Modern animated login page designed
+                    using HTML and CSS.
+                </p>
+
+                <div class="project-buttons">
+                    <a href="#" target="_blank">
+                        Live Demo
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-heading">
+            <p>Let's Connect</p>
+            <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's work together</h3>
+
+                <p>
+                    If you would like to discuss a website,
+                    collaboration or development opportunity,
+                    feel free to contact me.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="https://www.linkedin.com/in/iqra-zakir-000981378?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://github.com/iqrazakir90" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://wa.me/923189993272" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" id="contactForm">
+
+                <input type="text"
+                       placeholder="Your Name"
+                       required>
+
+                <input type="email"
+       placeholder="Your Email"
+       required>
+
+<textarea
+    placeholder="Your Message"
+    rows="6"
+    required></textarea>
+
+<button type="submit">
+    Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>Iqra Zakir</h3>
+
+    <p>Web Developer</p>
+
+    <p>
+        © 2026 Iqra Zakir. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert("Thank you! Your message has been received.");
+
+        contactForm.reset();
+
+    });
+
+</script>
+
+</body>
+</html>
